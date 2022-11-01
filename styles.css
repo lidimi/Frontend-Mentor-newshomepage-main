@@ -6,9 +6,14 @@
     margin: 0;
 }
 
+body {
+    background-color: hsl(36, 100%, 99%);
+}
+
 .wrapper {
     width: 80%;
     max-width: 1400px;
+    min-width: 1200px;
     margin: 0 auto;
     font-family: 'Inter', sans-serif;
 }
@@ -39,6 +44,10 @@ li a {
     color: hsl(236, 13%, 42%);
 }
 
+li a:hover {
+    color: hsl(5, 85%, 63%);
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -58,6 +67,7 @@ img {
 
 hr {
     border: 0.5px solid hsl(236, 13%, 42%);
+    margin: .5rem 0;
 }
 
 aside {
@@ -65,6 +75,17 @@ aside {
     background-color: hsl(240, 100%, 5%);
     color: hsl(236, 13%, 42%);
     padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+aside a {
+    text-decoration: none;
+    color: hsl(36, 100%, 99%);
+}
+
+aside a:hover {
+    color: hsl(35, 77%, 62%);
 }
 
 h2 {
@@ -74,7 +95,7 @@ h2 {
 }
 
 h3 {
-    color: hsl(36, 100%, 99%);
+
     margin: 1rem 0;
     font-size: 22px;
 }
@@ -110,6 +131,11 @@ main {
 
 }
 
+.readmore:hover {
+    background-color: hsl(240, 100%, 5%);
+    cursor: pointer;
+}
+
 .section1 {
     grid-area: section1;
 }
@@ -138,15 +164,94 @@ h4 {
 }
 
 h5 {
-    color: hsl(240, 100%, 5%);
+
     font-size: 20px;
     margin-bottom: 1rem;
 }
+
 
 .about p {
     color: hsl(236, 13%, 42%);
 }
 
+.about a {
+    text-decoration: none;
+    color: hsl(240, 100%, 5%);
+}
+
+.about a:hover {
+    color: hsl(5, 85%, 63%);
+}
+
 footer {
     margin-top: 2rem;
+}
+
+#mobile-menu {
+    display: none;
+}
+
+.open-menu {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .wrapper {
+        width: 95%;
+        min-width: 300px;
+        max-width: 1000px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .open-menu {
+        border: none;
+        display: block;
+        position: absolute;
+        top: 4rem;
+        right: 2rem;
+    }
+
+    #mobile-menu {
+        width: 75%;
+        height: 100vh;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 1;
+        background-color: hsl(36, 100%, 99%);
+        padding: 2rem;
+    }
+
+    #mobile-menu ul {
+        margin-top: 3rem;
+        color: hsl(240, 100%, 5%);
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mobile-menu ul li {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .close-menu {
+        text-align: right;
+
+    }
+
+    .close-btn {
+        border: none;
+        background-color: hsl(36, 100%, 99%);
+        position: absolute;
+        top: 4rem;
+        right: 2rem;
+    }
+
+    #desktop-menu {
+        display: none;
+    }
 }
